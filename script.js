@@ -9,7 +9,6 @@ const restartButton = document.getElementById("restartButton");
 const body = document.getElementsByTagName("body");
 
 
-body.addEventListener("onload" , alert("welcome to my guess the number game :)") )
 checkButton.addEventListener("click", () => {
     let userGuess = Number(guessInput.value);
 
