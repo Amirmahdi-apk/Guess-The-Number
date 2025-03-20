@@ -1,0 +1,48 @@
+@font-face {
+    font-family: bigShoulder ;
+    src: url(fonts/BigShouldersStencil-VariableFont_opsz\,wght.ttf);
+}
+body {
+    font-family: bigShoulder;
+    text-align: center;
+    background-color: #99BC85;
+}
+
+.game-container {
+    vertical-align:-webkit-baseline-middle;
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 5px 5px 10px #3F7D58;
+    border-radius: 10px;
+}
+
+input {
+    padding: 8px;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color:#176127 ;
+    rotate: 6deg;
+    
+}
+
+#message {
+    font-weight: bold;
+    margin-top: 10px;
+}
