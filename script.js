@@ -65,11 +65,6 @@ function giveHint(guessHistory) {
     message.style.color = "brown";
 }
 
-// Guide button to provide hint
-guide.addEventListener("click", () => {
-    giveHint(guessHistory);
-});
-
 // Restart button
 restartButton.addEventListener("click", () => {
     randomNumber = Math.floor(Math.random() * 100) + 1;
