@@ -1,7 +1,7 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+let randomNumber = Math.floor(Math.random() * 200) + 1;
 let attempts = 0;
 let guessHistory = [];
-
+let hintRange = 10;
 // --------------------------------------------------------------
 const guessInput = document.getElementById("guessInput");
 const checkButton = document.getElementById("checkButton");
@@ -14,7 +14,7 @@ checkButton.addEventListener("click", () => {
     let userGuess = Number(guessInput.value);
 
     // Checking if the number is correct
-    if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 200) {
         message.textContent = "Please enter a valid number between 1 and 100!";
         message.style.color = "red";
         return;
@@ -50,6 +50,7 @@ checkButton.addEventListener("click", () => {
 
 // Function to give a hint based on guess history
 function giveHint(guessHistory) {
+    let hint = randomNumber + Math.floor(Math.random() * (hintRange * 2 + 1)) - hintRange;
     if (guessHistory.length === 0) {
         message.textContent = "Make some guesses first!";
         message.style.color = "red";
@@ -61,13 +62,13 @@ function giveHint(guessHistory) {
     let maxGuess = Math.max(...guessHistory);
 
     // Provide the hint to the user
-    message.textContent = `Hint: The number is between ${minGuess} and ${maxGuess}.`;
+    message.textContent = `you are close to number. Hint: ${hint}`;
     message.style.color = "brown";
 }
 
 // Restart button
 restartButton.addEventListener("click", () => {
-    randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 200) + 1;
     attempts = 0;
     guessHistory = []; // Reset guess history
     message.textContent = "";
