@@ -2,6 +2,9 @@ let randomNumber = Math.floor(Math.random() * 200) + 1;
 let attempts = 0;
 let guessHistory = [];
 let hintRange = 10;
+let timerDuration = 15;
+let timerId;
+let sound = new Audio('src/buzzer.mp3');
 // --------------------------------------------------------------
 const guessInput = document.getElementById("guessInput");
 const checkButton = document.getElementById("checkButton");
@@ -31,6 +34,7 @@ checkButton.addEventListener("click", () => {
         message.style.color = "green";
         checkButton.disabled = true;
         restartButton.style.display = "inline";
+        stopTimer();
     } else if (userGuess < randomNumber) {
         message.textContent = "Try a higher number!";
         message.style.color = "blue";
@@ -65,7 +69,26 @@ function giveHint(guessHistory) {
     message.textContent = `you are close to number. Hint: ${hint}`;
     message.style.color = "brown";
 }
-
+// timer function
+function startTimer() {
+    timerId = setInterval(() => {
+        if (timerDuration > 0) {
+            timerDuration--;
+            timerDisplay.textContent = `Time left: ${timerDuration}s`;
+        } else {
+            message.textContent = "Time's up! Game over.";
+            message.style.color = "red";
+            checkButton.disabled = true;
+            restartButton.style.display = "inline";
+            message.textContent = `my number is : ${randomNumber}`;
+            sound.play();
+            stopTimer(); // Stop timer when time is up
+        }
+    }, 950);
+}
+function stopTimer() {
+    clearInterval(timerId);
+}
 // Restart button
 restartButton.addEventListener("click", () => {
     randomNumber = Math.floor(Math.random() * 200) + 1;
@@ -75,4 +98,8 @@ restartButton.addEventListener("click", () => {
     guessInput.value = "";
     checkButton.disabled = false;
     restartButton.style.display = "none";
+    // reset the timer
+    timerDuration = 15; 
+    timerDisplay.textContent = `Time left: ${timerDuration}s`;
+    startTimer();
 });
