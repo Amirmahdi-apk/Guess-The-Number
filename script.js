@@ -18,7 +18,7 @@ checkButton.addEventListener("click", () => {
 
     // Checking if the number is correct
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 200) {
-        message.textContent = "Please enter a valid number between 1 and 100!";
+        message.textContent = "Please enter a valid number between 1 and 200!";
         message.style.color = "red";
         return;
     }
