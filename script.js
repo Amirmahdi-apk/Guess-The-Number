@@ -57,6 +57,9 @@ checkButton.addEventListener("click", () => {
     guessInput.focus();
 });
 
+guessInput.value = ""; 
+guessInput.focus(); 
+
 // Function to give a hint based on guess history
 function giveHint(guessHistory) {
     let hint = randomNumber + Math.floor(Math.random() * (hintRange * 2 + 1)) - hintRange;
