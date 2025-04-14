@@ -44,11 +44,10 @@ checkButton.addEventListener("click", () => {
         message.textContent = "Try a lower number!";
         message.style.color = "blue";
     }
-    
     // History of user guesses
     const historyDisplay = document.getElementById("history");
     historyDisplay.textContent = `Your guesses: ${guessHistory.join(",")}`;
-    
+    // -----------------------------------------------------------------------
     // Give hint after 3 wrong guesses
     if (attempts === 3) {
         giveHint(guessHistory);
@@ -90,7 +89,7 @@ function startTimer() {
             incorrect.play();
             stopTimer(); // Stop timer when time is up
         }
-    }, 900);
+    }, 950);
 }
 function stopTimer() {
     clearInterval(timerId);
@@ -105,24 +104,24 @@ restartButton.addEventListener("click", () => {
     checkButton.disabled = false;
     restartButton.style.display = "none";
     // reset the timer
-    timerDuration = 15; 
+    timerDuration = 15;
     timerDisplay.textContent = `Time left: ${timerDuration}s`;
     startTimer();
 });
 
 // prevention inspect element ( ctrl+shift+c , ctrl+shift+i , f12 & rightClick )
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.keyCode == 123) {
-        event.preventDefault(); 
+        event.preventDefault();
     }
     if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-        event.preventDefault(); 
+        event.preventDefault();
     }
     if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
-        event.preventDefault();  
+        event.preventDefault();
     }
 });
 
-document.addEventListener('contextmenu', function(event) {
-    event.preventDefault(); 
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
 });
