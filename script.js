@@ -16,7 +16,6 @@ const guide = document.getElementById("Guide-Button");
 
 checkButton.addEventListener("click", () => {
     let userGuess = Number(guessInput.value);
-
     // Checking if the number is correct
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 200) {
         message.textContent = "Please enter a valid number between 1 and 200!";
@@ -56,9 +55,6 @@ checkButton.addEventListener("click", () => {
     guessInput.value = "";
     guessInput.focus();
 });
-
-guessInput.value = ""; 
-guessInput.focus(); 
 
 // Function to give a hint based on guess history
 function giveHint(guessHistory) {
