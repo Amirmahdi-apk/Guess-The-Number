@@ -103,3 +103,20 @@ restartButton.addEventListener("click", () => {
     timerDisplay.textContent = `Time left: ${timerDuration}s`;
     startTimer();
 });
+
+// prevention inspect element ( ctrl+shift+c , ctrl+shift+i , f12 & rightClick )
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode == 123) {
+        event.preventDefault(); 
+    }
+    if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+        event.preventDefault(); 
+    }
+    if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+        event.preventDefault();  
+    }
+});
+
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault(); 
+});
