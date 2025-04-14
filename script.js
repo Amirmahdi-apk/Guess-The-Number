@@ -4,7 +4,8 @@ let guessHistory = [];
 let hintRange = 10;
 let timerDuration = 15;
 let timerId;
-let sound = new Audio('src/buzzer.mp3');
+let incorrect = new Audio('src/incorrect.mp3');
+let correct = new Audio('src/correct.mp3');
 // --------------------------------------------------------------
 const guessInput = document.getElementById("guessInput");
 const checkButton = document.getElementById("checkButton");
@@ -30,6 +31,7 @@ checkButton.addEventListener("click", () => {
 
     // Check user guess
     if (userGuess === randomNumber) {
+        correct.play();
         message.textContent = `Congratulations! You guessed it right 🎉 + Attempts: ${attempts}`;
         message.style.color = "green";
         checkButton.disabled = true;
