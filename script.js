@@ -44,7 +44,11 @@ checkButton.addEventListener("click", () => {
         message.textContent = "Try a lower number!";
         message.style.color = "blue";
     }
-
+    
+    // History of user guesses
+    const historyDisplay = document.getElementById("history");
+    historyDisplay.textContent = `Your guesses: ${guessHistory.join(",")}`;
+    
     // Give hint after 3 wrong guesses
     if (attempts === 3) {
         giveHint(guessHistory);
@@ -83,10 +87,10 @@ function startTimer() {
             checkButton.disabled = true;
             restartButton.style.display = "inline";
             message.textContent = `my number is : ${randomNumber}`;
-            sound.play();
+            incorrect.play();
             stopTimer(); // Stop timer when time is up
         }
-    }, 950);
+    }, 900);
 }
 function stopTimer() {
     clearInterval(timerId);
