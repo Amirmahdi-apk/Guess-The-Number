@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess The Number Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body >
+
+<body>
     <div class="game-Container">
         <h1>Guess The Number :</h1>
-        <p>Guess a number between 1 and 200 </p>
+        <div class="makeNumber">
+            <input type="number" id="minimumGenerate" placeholder="Minimum">
+            <input type="number" id="maximumGenerate" placeholder="Maximum">
+            <button id="TargetChoose">Target</button>
+        </div>
         <input type="number" id="guessInput" placeholder="Enter a Number">
         <button id="checkButton">Check</button>
         <p id="message"></p>
-        <button id="restartButton" > Play Again</button>
-    </div>
-    <section>
+        <section>
             <div id="timerDisplay">Time left: 15s</div>
         </section>
-    <section id="history"></section>
+        <section id="history"></section>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
