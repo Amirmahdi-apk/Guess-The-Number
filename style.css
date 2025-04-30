@@ -1,18 +1,16 @@
 @font-face {
-    font-family: bigShoulder ;
+    font-family: bigShoulder;
     src: url(fonts/BigShouldersStencil-VariableFont_opsz\,wght.ttf);
 }
+
 body {
     font-family: bigShoulder;
     text-align: center;
     background-color: #99BC85;
 }
-#title{
-font-size: 18px;
-}
 
 .game-container {
-    vertical-align:-webkit-baseline-middle;
+    vertical-align: -webkit-baseline-middle;
     width: 300px;
     margin: 50px auto;
     padding: 20px;
@@ -21,7 +19,7 @@ font-size: 18px;
     border-radius: 10px;
 }
 
-#guessInput{
+#guessInput {
     border-radius: 10px;
     padding: 8px;
     width: 80%;
@@ -42,9 +40,9 @@ button {
 }
 
 button:hover {
-    background-color:#176127 ;
+    background-color: #176127;
     rotate: 8deg;
-    filter:contrast(2)
+    filter: contrast(2)
 }
 
 #message {
@@ -52,7 +50,8 @@ button:hover {
     margin-top: 10px;
     font-size: 25px;
 }
-ul{
+
+ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -60,28 +59,58 @@ ul{
     gap: 60px;
     margin-top: 100px;
 }
-ul li button{
+
+ul li button {
     background-color: green;
     border: 2px solid black;
 }
-#timerDisplay{
+
+#timerDisplay {
     margin-top: 30px;
     font-size: 30px;
 }
-.difficulty-btn{
-   margin-top: 40px; 
+
+.difficulty-btn {
+    margin-top: 40px;
 }
-.makeNumber{
-display: flex;
-justify-content: center;
+
+.makeNumber {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
-.makeNumber input{
-    margin: 2px;
+
+.makeNumber input {
     border-radius: 10px;
-    padding: 5px;
-    width: auto;
-    color: rgb(0, 0, 0);
+    padding: 8px;
+    width: 120px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #333;
+    background-color: #f0f0f0;
 }
-.difficulty-btn{
-   margin-top: 40px; 
+.makeNumber button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    box-shadow: 3px 3px 6px #08230e;
+    cursor: pointer;
+}
+@media (max-width: 500px) {
+    .makeNumber {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .makeNumber input,
+    .makeNumber button {
+        width: 90%;
+        max-width: 300px;
+    }
 }
